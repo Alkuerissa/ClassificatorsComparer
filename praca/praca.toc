@@ -1,0 +1,12 @@
+\select@language {polish}
+\contentsline {chapter}{Wprowadzenie}{3}{section*.1}
+\contentsline {chapter}{\numberline {1}Klasyfikatory}{4}{chapter.1}
+\contentsline {chapter}{\numberline {2}Metryki}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Benchmarki}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}Japanese Credit Screening Data Set}{6}{section.3.1}
+\contentsline {chapter}{Bibliografia}{7}{section*.3}
+\contentsline {chapter}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{8}{section*.4}
+\contentsline {chapter}{Spis rysunk\'ow}{9}{section*.5}
+\contentsline {chapter}{Spis tablic}{10}{section*.6}
+\contentsline {chapter}{Dodatek. Instrukcja obs\IeC {\l }ugi aplikacji}{11}{section*.7}
+\contentsfinish 

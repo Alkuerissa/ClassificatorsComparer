@@ -1,0 +1,93 @@
+\documentclass[pl]{minipw} % wszystkie ustawienia szablonu są w minipw.cls; if in English, change [pl] to [en]
+\allowdisplaybreaks
+\usepackage{indentfirst}
+%\usepackage[hidelinks]{hyperref}
+\usepackage[all]{nowidow}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{polski}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{listings}
+\setlength{\parindent}{5mm} % wcięcie akapitowe 5mm, zarządzenie Rektora
+
+
+\begin{document}
+\sloppy
+
+
+% 4. Spis treści
+\tableofcontents
+
+% 5. Treść
+
+\cleardoublepage
+\pagestyle{fancy}
+
+\chapter*{Wprowadzenie}
+
+\chapter{Klasyfikatory}
+
+\chapter{Metryki}
+
+\chapter{Benchmarki}
+\section{Japanese Credit Screening Data Set}
+Dane dotyczą przyznawania kredytów na podstawie informacji o osobie ubiegającej się. Zostały zebrane na podstawie rozmów z przedstawicielami japońskiej firmy przyznającej kredyty. Dane składają się z 16 kolumn: 6 liczbowych, 9 zawierających napisy i jednej binarnej -- objaśniającej. Kolumny nie zostały nigdzie opisane.
+
+\begin{table}[H]
+\caption{Opisy przypadków użycia}
+\label{use_case_tab}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+
+b  & 30.83  & 0  & u  & g  & w  & v  & 1.25  & t  & t  & 1  & f  & g  & 00202  & 0  & +\\
+a  & 58.67  & 4.46  & u  & g  & q  & h  & 3.04  & t  & t  & 6  & f  & g  & 00043  & 560  & +\\
+a  & 24.50  & 0.5  & u  & g  & q  & h  & 1.5  & t  & f  & 0  & f  & g  & 00280  & 824  & +\\
+b  & 27.83  & 1.54  & u  & g  & w  & v  & 3.75  & t  & t  & 5  & t  & g  & 00100  & 3  & +\\
+b  & 20.17  & 5.625  & u  & g  & w  & v  & 1.71  & t  & f  & 0  & f  & s  & 00120  & 0  & +\\
+\hline
+\end{tabular}
+\end{table}
+
+% 6. Bibliografia
+% Bibliografia leksykograficznie wg nazwisk autorów
+
+\begin{thebibliography}{20}%jak ktoś ma więcej książek, to niech wpisze większą liczbę
+% \bibitem[numerek]{referencja} Autor, \emph{Tytuł}, Wydawnictwo, rok, strony
+% cytowanie: \cite{referencja1, referencja 2,...}
+
+\end{thebibliography}
+
+
+
+% 7. Wykaz symboli i skrótów - jeśli nie ma, zakomentować
+\chapter*{Wykaz symboli i skrótów}
+
+\begin{tabularx}{\textwidth}{cX}
+\textbf{Benchmark} & test wydajności i~jakości treningu \\
+
+\end{tabularx}
+
+
+% 8. Spis rysunków - jeśli nie ma, zakomentować (ale być może po prostu się nie zrobi)
+\listoffigures
+
+
+% 9. Spis tabel - jak wyżej
+\listoftables
+
+\chapter*{Dodatek. Instrukcja obsługi aplikacji}
+\subsection*{Przygotowanie}
+ 
+\subsection*{Uruchomienie aplikacji}
+
+\clearpage
+
+\end{document}
