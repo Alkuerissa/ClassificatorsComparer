@@ -16,7 +16,7 @@
 \usepackage{enumitem}
 \usepackage{listings}
 \setlength{\parindent}{5mm} % wcięcie akapitowe 5mm, zarządzenie Rektora
-
+\usepackage{array}
 
 \begin{document}
 \sloppy
@@ -37,11 +37,16 @@
 \chapter{Metryki}
 
 \chapter{Benchmarki}
+Wszystkie z poniższych zestawów danych dotyczą przyznawania kredytów na podstawie informacji o osobie ubiegającej się.
 \section{Japanese Credit Screening Data Set}
-Dane dotyczą przyznawania kredytów na podstawie informacji o osobie ubiegającej się. Zostały zebrane na podstawie rozmów z przedstawicielami japońskiej firmy przyznającej kredyty. Dane składają się z 16 kolumn: 6 liczbowych, 9 zawierających napisy i jednej binarnej -- objaśniającej. Kolumny nie zostały nigdzie opisane.
-
+Dane zostały utworzone na podstawie rozmów z przedstawicielami japońskiej firmy przyznającej kredyty. Kolumny nie zostały nigdzie opisane. \\
+\textbf{Kolumny:} 6 liczbowych, 9 zawierających napisy \\
+\textbf{Liczba wierszy:} 690 \\
+\textbf{Rodzaj zdania:} Klasyfikacja \\
+\textbf{Zmienna objaśniana:} + lub -, czyli przyznanie lub nieprzyznanie kredytu \\
+\textbf{Rozkład zmiennej objaśnionej:} klasa "+"\ występuje w 45\% obserwacji \\
 \begin{table}[H]
-\caption{Opisy przypadków użycia}
+\caption{Pierwsze wiersze danych}
 \label{use_case_tab}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -55,6 +60,118 @@ b  & 20.17  & 5.625  & u  & g  & w  & v  & 1.71  & t  & f  & 0  & f  & s  & 0012
 \hline
 \end{tabular}
 \end{table}
+
+\section{German Credit Data}
+Poniższe dane zostały dostarczone przez profesora Hansa Hofmanna z Uniwersytetu w Hamburgu. Udostępnione zostały dwa pliki: jeden zawierający kolumny jakościowe i ilościowe i drugi, zawierający tylko kolumny ilościowe. Ze względu na łatwość interpretacji dalej wykorzystywany będzie pierwszy zestaw.
+Wraz z danymi został dostarczony ich dokładny opis, zawierający nazwy kolumn i znaczenie wartości w poszczególnych kolumnach. \\
+\textbf{Kolumny:} 7 kolumn ilościowych i 13 jakościowych \\
+\textbf{Liczba wierszy:} 1000 \\
+\textbf{Rodzaj zdania:} Klasyfikacja \\
+\textbf{Zmienna objaśniana:} 1 - przyznanie lub 2 - nieprzyznanie kredytu \\
+\textbf{Rozkład zmiennej objaśnionej:} klasa "2"\ występuje w 30\% obserwacji \\
+
+\newcolumntype{L}{>{\centering\arraybackslash}m{#1}}
+
+\begin{table}[H]
+\caption{Znaczenie kolumn}
+\begin{tabular}{|l|L|L|}
+\hline
+& Nazwa atrybutu & Przyjmowane wartości \\
+\hline
+1 & Status istniejących kont & brak konta; 0 DM; do 200 DM; powyżej 200 DM \\
+\hline
+2 & Czas trwania pożyczki & wartość numeryczna w miesiącach \\
+\hline
+3 & Historia kredytowa & brak historii kredytowej; wszystkie kredyty spłacone; opóźnienia w spłacie; konto z niespłaconymi kredytami \\
+\hline
+4 & Cel pożyczki & nowy samochód; używany samochód; meble / wyposażenie domu; radio / telewizor; urządzenia domowe; naprawy; edukacja; wakacje; szkolenia zawodowe; pożyczka biznesowa; inne \\
+\hline
+5 & Wielkość pożyczki & wartość numeryczna w DM \\
+\hline
+6 & Stan konta oszczędnościowego lub obligacyjnego & brak takich kont; do 100 DM; do 500 DM; do 1000 DM; co najmniej 1000 DM \\
+\hline
+7 & Długość trwania aktualnego stosunku pracy & bezrobotny; do jednego roku; do 4 lat; do 7 lat; co najmniej 7 lat \\
+\hline
+8 & Rata pożyczki jako procent rozporządzalnego dochodu & wartość numeryczna w procentach \\
+\hline
+9 & Stan cywilny oraz płeć & mężczyzna rozwiedziony lub w separacji; kobieta rozwiedziona, w separacji lub zamężna; wolny mężczyzna; mężczyzna zamężny lub owdowiały; wolna kobieta \\
+\hline
+10 & Inni wierzyciele/wnioskodawcy & brak; wnioskodawca; żyrant      \\
+\hline
+11 & Czas zamieszkania w aktualnym miejscu & wartość numeryczna: rok \\
+\hline
+12 & Posiadana własność & brak; nieruchomość; wkład do spółdzielni mieszkaniowej / ubezpieczenie na życie; samochód \\
+\hline
+13 & Wiek & wartość numeryczna w latach \\
+\hline
+14 & Inne posiadane plany ratalne & brak; bankowy; w sieci sklepów \\
+\hline
+15 & Stan posiadanie domu & wynajmowany; posiadany na własność; za darmo \\
+\hline
+16 & Liczba kredytów posiadanych w rozpatrywanym banku & wartość numeryczna \\
+\hline
+17 & Praca & bezrobotny/niewykwalifikowany (nie stały mieszkaniec); niewykwalifikowany (stały mieszkaniec); pracownik wykwalifikowany / urzędnik; kadra zarządcza / samozatrudniony / pracownik wysoce wykwalifikowany \\
+\hline
+18 & Liczba osób zależnych finansowo od wnioskodawcy & wartość numeryczna \\
+\hline
+19 & Telefon & brak; zarejestrowany na nazwisko wnioskodawcy \\
+\hline
+20 & Pracownik zagraniczny & tak; nie \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{Pierwsze wiersze danych}
+\label{use_case_tab}
+\centering
+\scalebox{0.7}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 \\
+\hline
+A11  & 6  & A34  & A43  & 1169  & A65  & A75  & 4  & A93  & A101  & 4  & A121  & 67  & A143  & A152  & 2  & A173  & 1  & A192  & A201  & 1\\
+A12  & 48  & A32  & A43  & 5951  & A61  & A73  & 2  & A92  & A101  & 2  & A121  & 22  & A143  & A152  & 1  & A173  & 1  & A191  & A201  & 2\\
+A14  & 12  & A34  & A46  & 2096  & A61  & A74  & 2  & A93  & A101  & 3  & A121  & 49  & A143  & A152  & 1  & A172  & 2  & A191  & A201  & 1\\
+A11  & 42  & A32  & A42  & 7882  & A61  & A74  & 2  & A93  & A103  & 4  & A122  & 45  & A143  & A153  & 1  & A173  & 2  & A191  & A201  & 1\\
+A11  & 24  & A33  & A40  & 4870  & A61  & A73  & 3  & A93  & A101  & 4  & A124  & 53  & A143  & A153  & 2  & A173  & 2  & A191  & A201  & 2\\
+\hline
+\end{tabular}
+}
+\end{table}
+
+Opis danych zawiera proponowaną funkcję jakości klasyfikacji, zakładającą większą karę za niesłuszne przyznanie kredytu, niż za niesłuszne nieprzyznanie.
+
+\section{Australian Credit Approval}
+Dane dotyczą przyznawania kart kredytowych. \\
+\textbf{Kolumny:} 6 kolumn ilościowych i 8 jakościowych \\
+\textbf{Liczba wierszy:} 690 \\
+\textbf{Rodzaj zdania:} Klasyfikacja \\
+\textbf{Zmienna objaśniana:} 0 - nieprzyznanie lub 1 - przyznanie karty \\
+\textbf{Rozkład zmiennej objaśnionej:} klasa "1"\ występuje w 56\% obserwacji \\
+ 
+\begin{table}[H]
+\caption{Pierwsze wiersze danych}
+\label{use_case_tab}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+1  & 22.08  & 11.46  & 2  & 4  & 4  & 1.585  & 0  & 0  & 0  & 1  & 2  & 100  & 1213  & 0\\
+0  & 22.67  & 7  & 2  & 8  & 4  & 0.165  & 0  & 0  & 0  & 0  & 2  & 160  & 1  & 0\\
+0  & 29.58  & 1.75  & 1  & 4  & 4  & 1.25  & 0  & 0  & 0  & 1  & 2  & 280  & 1  & 0\\
+0  & 21.67  & 11.5  & 1  & 5  & 3  & 0  & 1  & 1  & 11  & 1  & 2  & 0  & 1  & 1\\
+1  & 20.17  & 8.17  & 2  & 6  & 4  & 1.96  & 1  & 1  & 14  & 0  & 2  & 60  & 159  & 1\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Give Me Some Credit}
+
+\textbf{Kolumny:} 6 kolumn ilościowych i 8 jakościowych \\
+\textbf{Liczba wierszy:} 690 \\
+\textbf{Rodzaj zdania:} Klasyfikacja \\
+\textbf{Zmienna objaśniana:} 0 - nieprzyznanie lub 1 - przyznanie karty \\
+\textbf{Rozkład zmiennej objaśnionej:} klasa "1"\ występuje w 56\% obserwacji \\
 
 % 6. Bibliografia
 % Bibliografia leksykograficznie wg nazwisk autorów
