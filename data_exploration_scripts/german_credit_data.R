@@ -1,0 +1,5 @@
+source("helper.R")
+data = read.csv("../data/german.data", header = FALSE, stringsAsFactors=FALSE, sep=" ")
+print_to_latex(data[1:5, ])
+nrow(data)
+mean(data[, 21] - 1)

@@ -1,16 +1,7 @@
-print_to_latex = function(data)
-{
-  for (i in 1:nrow(data))
-  {
-    for (j in 1:(ncol(data)-1))
-    {
-      cat(data[i, j] , " & ")
-    }
-    cat(data[i, ncol(data)])
-    cat("\\\\\n")
-  }
-}
-
+source("helper.R")
 data = read.csv("../data/japanese_credit_screening_data_set.csv", header = FALSE, stringsAsFactors=FALSE)
-data[, 16] = plyr::revalue(data[, 16], c('+'=1, '-'=0))
 print_to_latex(data[1:5, ])
+data = read.csv("../data/japanese_credit_screening_data_set.csv", header = FALSE, stringsAsFactors=TRUE)
+data[, 16] = as.numeric(data[, 16]) - 1 
+nrow(data)
+mean(data[, 16])

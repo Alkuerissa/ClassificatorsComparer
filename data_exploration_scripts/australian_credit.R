@@ -1,0 +1,6 @@
+source("helper.R")
+data = read.csv("../data/australian.dat", header = FALSE, stringsAsFactors=FALSE, sep=" ")
+data[, 16] = plyr::revalue(data[, 16], c('+'=1, '-'=0))
+print_to_latex(data[1:5, ])
+nrow(data)
+mean(data[, 15])
